@@ -22,12 +22,14 @@ public class Start {
             for (int j = i; j < arr.length; j++) {
                 System.out.println(j + " " + (arr[j] < smallest) + "");
                 if (arr[j] < smallest) {
+
+                    //Here we storege position and value of min num
                     smallest = arr[j];
                     position = j;
                     System.out.println("Now smallest value has changed and its " + smallest);
                 }
             }
-
+            //swaping position 
             int temp = arr[i];
             arr[i] = smallest;
             arr[position] = temp;
@@ -49,12 +51,12 @@ public class Start {
     }
 
     static double averageValue(int[] arr) {
-        int sum = 0; 
+        int sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            sum +=arr[i];
+            sum += arr[i];
         }
-        System.out.println("sum = : "+sum + " count in array is "+arr.length+ " avg is "+sum/arr.length);
-        return sum/arr.length;
+        System.out.println("sum = : " + sum + " count in array is " + arr.length + " avg is " + sum / arr.length);
+        return sum / arr.length;
     }
 
     public static void main(String[] args) {
