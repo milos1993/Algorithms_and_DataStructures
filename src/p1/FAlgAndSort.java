@@ -5,6 +5,8 @@
  */
 package p1;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author acer e1
@@ -16,6 +18,7 @@ public class FAlgAndSort extends javax.swing.JFrame {
      */
     public FAlgAndSort() {
         initComponents();
+        setListeners();
     }
 
     /**
@@ -27,33 +30,36 @@ public class FAlgAndSort extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelArrayForSorting = new javax.swing.JLabel();
-        jTextArrayElements = new javax.swing.JTextField();
-        jLabelSortedArray = new javax.swing.JLabel();
-        jTextNewArrayElements = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextSearch = new javax.swing.JTextField();
+        jLabelA = new javax.swing.JLabel();
+        jTextA = new javax.swing.JTextField();
+        jLabelB = new javax.swing.JLabel();
+        jTextB = new javax.swing.JTextField();
+        jLabelC = new javax.swing.JLabel();
+        jTextC = new javax.swing.JTextField();
         jButtonSort = new javax.swing.JButton();
         jButtonFind = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jTextD = new javax.swing.JTextField();
+        jLabelD = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelArrayForSorting.setText("Unesite elemente niza ");
+        jLabelA.setText("Unesite elemente niza ");
 
-        jLabelSortedArray.setText("Sortiran niz je");
+        jLabelB.setText("Sortiran niz je");
 
-        jTextNewArrayElements.setEditable(false);
-        jTextNewArrayElements.setText(" ");
+        jTextB.setEditable(false);
+        jTextB.setText(" ");
 
-        jLabel3.setText("Da li se broj nalazi u nizu ?");
+        jLabelC.setText("Da li se broj nalazi u nizu ?");
 
-        jTextSearch.setEditable(false);
-        jTextSearch.setText(" ");
+        jTextC.setEditable(false);
+        jTextC.setText(" ");
 
         jButtonSort.setText("Sort");
 
         jButtonFind.setText("Find");
+
+        jLabelD.setText("Broj");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -61,24 +67,26 @@ public class FAlgAndSort extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonSort, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addComponent(jButtonFind, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelD, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextD, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelSortedArray)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabelArrayForSorting))
+                            .addComponent(jLabelB)
+                            .addComponent(jLabelC)
+                            .addComponent(jLabelA))
                         .addGap(92, 92, 92)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextC, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextArrayElements, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextNewArrayElements, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)))))
+                                .addComponent(jTextA, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)))))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -86,21 +94,22 @@ public class FAlgAndSort extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelArrayForSorting)
-                    .addComponent(jTextArrayElements, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelA)
+                    .addComponent(jTextA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelSortedArray)
-                    .addComponent(jTextNewArrayElements, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelB)
+                    .addComponent(jTextB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelC)
+                    .addComponent(jTextC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSort)
                     .addComponent(jButtonFind)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelD))
                 .addContainerGap(96, Short.MAX_VALUE))
         );
 
@@ -111,12 +120,18 @@ public class FAlgAndSort extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonFind;
     private javax.swing.JButton jButtonSort;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabelArrayForSorting;
-    private javax.swing.JLabel jLabelSortedArray;
-    private javax.swing.JTextField jTextArrayElements;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextNewArrayElements;
-    private javax.swing.JTextField jTextSearch;
+    private javax.swing.JLabel jLabelA;
+    private javax.swing.JLabel jLabelB;
+    private javax.swing.JLabel jLabelC;
+    private javax.swing.JLabel jLabelD;
+    private javax.swing.JTextField jTextA;
+    private javax.swing.JTextField jTextB;
+    private javax.swing.JTextField jTextC;
+    private javax.swing.JTextField jTextD;
     // End of variables declaration//GEN-END:variables
+
+    private void setListeners() {
+        ActionListener searchingListener = new SearchingListener(jTextA, jTextD, jTextC);
+        jButtonFind.addActionListener(searchingListener);
+    }
 }
