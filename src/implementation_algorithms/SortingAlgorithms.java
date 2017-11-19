@@ -13,7 +13,15 @@ import inf_algorithms.ISortingAlgorithms;
  * @author Milos Dragovic
  */
 public class SortingAlgorithms implements ISortingAlgorithms {
-
+    
+    /** 
+    *In this method we have ilustration of how selection sort algorithms actually works, 
+    * input parametar is simple array  of integer @param arr and return value is itselg   
+    * but previously sorted
+    * @param arr 
+    * @return int[] 
+    * 
+    */
     @Override
     public int[] selectionSort(int[] arr) {
 
