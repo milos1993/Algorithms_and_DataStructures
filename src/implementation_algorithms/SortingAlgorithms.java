@@ -31,8 +31,7 @@ public class SortingAlgorithms implements ISortingAlgorithms {
             System.out.println("Smallest value is " + smallest + " witch postition is " + position);
             for (int j = i; j < arr.length; j++) {
                 System.out.println(j + " " + (arr[j] < smallest) + "");
-                if (arr[j] < smallest) {
-
+                if (arr[j] < smallest) { 
                     //Here we storege position and value of min num
                     smallest = arr[j];
                     position = j;
