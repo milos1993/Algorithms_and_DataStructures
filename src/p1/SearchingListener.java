@@ -15,29 +15,30 @@ import javax.swing.JTextField;
  * @author Milos Dragovic
  */
 public class SearchingListener implements ActionListener {
-    private JTextField jTextA ;
-    private JTextField jTextD ;
-    private JTextField jTextC ;
-    
+
+    private JTextField jTextA;
+    private JTextField jTextD;
+    private JTextField jTextC;
+
     public SearchingListener(JTextField jTextA, JTextField jTextD, JTextField jTextC) {
         this.jTextA = jTextA;
         this.jTextD = jTextD;
         this.jTextC = jTextC;
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("Event has just happened");
         int[] a = convertStringToArray(jTextA.getText().trim());
         int d = Integer.getInteger(jTextD.getText().trim());
         boolean r = new SearchingAlgorithms().LinearSearch(a, d);
-        jTextC.setText(r+"");
-        
+        jTextC.setText(r + "");
+
     }
-    
-    private int[] convertStringToArray(String string){
-        String [] arrayStr = string.trim().replace(",", " ").split(" ");
-            int[] arrayInt = new int[5];
+
+    private int[] convertStringToArray(String string) {
+        String[] arrayStr = string.trim().replace(",", " ").split(" ");
+        int[] arrayInt = new int[5];
 //        int[] arrayInt = new int[arrayStr.length];
         for (int i = 0; i < arrayInt.length; i++) {
             arrayInt[i] = Integer.valueOf(arrayStr[i].trim());
