@@ -13,15 +13,16 @@ import inf_algorithms.ISortingAlgorithms;
  * @author Milos Dragovic
  */
 public class SortingAlgorithms implements ISortingAlgorithms {
-    
-    /** 
-    *In this method we have ilustration of how selection sort algorithms actually works, 
-    * input parametar is simple array  of integer @param arr and return value is itselg   
-    * but previously sorted
-    * @param arr 
-    * @return int[] 
-    * 
-    */
+
+    /**
+     * In this method we have ilustration of how selection sort algorithms
+     * actually works, input parametar is simple array of integer @param arr and
+     * return value is itselg but previously sorted
+     *
+     * @param arr
+     * @return int[]
+     *
+     */
     @Override
     public int[] selectionSort(int[] arr) {
 
@@ -31,7 +32,7 @@ public class SortingAlgorithms implements ISortingAlgorithms {
             System.out.println("Smallest value is " + smallest + " witch postition is " + position);
             for (int j = i; j < arr.length; j++) {
                 System.out.println(j + " " + (arr[j] < smallest) + "");
-                if (arr[j] < smallest) { 
+                if (arr[j] < smallest) {
                     //Here we storege position and value of min num
                     smallest = arr[j];
                     position = j;
@@ -46,6 +47,24 @@ public class SortingAlgorithms implements ISortingAlgorithms {
 
         }
         return arr;
+    }
+
+    @Override
+    public int[] bubbleSort(int[] arr) {
+        boolean swapped;
+        do {
+            swapped = false;
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    int temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+        } while (swapped);
+        return arr;
+//	System.out.println(Arrays.toString(arr));
     }
 
 }
