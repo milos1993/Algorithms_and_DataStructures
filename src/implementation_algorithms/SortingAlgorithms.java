@@ -63,8 +63,8 @@ public class SortingAlgorithms implements ISortingAlgorithms {
                 }
             }
         } while (swapped);
-        return arr;
 //	System.out.println(Arrays.toString(arr));
+        return arr;
     }
 
 }
