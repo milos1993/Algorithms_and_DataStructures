@@ -19,6 +19,7 @@ public class Start {
 
     public static void main(String[] args) {
         int[] array = {1, 3, 6, 5, 4, 2, 2, 6};
+        int[] array1 = {1,2,3,4,4,5,6,7,7,8};
         ISortingAlgorithms obj1 = new SortingAlgorithms();
 //        obj1.selectionSort(array);
 
@@ -28,6 +29,7 @@ public class Start {
 //        selectionSort(new int[]{1, 1, 1, 1, 1, 1});
 //        minValue(array);
 //        averageValue(array);
-        obj1.bubbleSort(array);
+//        obj1.bubbleSort(array);
+        System.out.println(obj2.binarySearch(8, array1, 0, array1.length-1));
     }
 }

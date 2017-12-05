@@ -11,6 +11,6 @@ package inf_algorithms;
  */
 public interface ISearchingAlgorithms {
     
-    boolean LinearSearch(int[] arr, int num);
-    
+    boolean linearSearch(int[] arr, int num);
+    boolean binarySearch(int v, int[]arr, int l, int r);
 }

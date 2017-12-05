@@ -31,7 +31,7 @@ public class SearchingListener implements ActionListener {
         System.out.println("SearchingListener event has just happened");
         int[] a = convertStringToArray(jTextA.getText().trim());
         int d = Integer.getInteger(jTextD.getText().trim());
-        boolean r = new SearchingAlgorithms().LinearSearch(a, d);
+        boolean r = new SearchingAlgorithms().linearSearch(a, d);
         jTextC.setText(r + "");
 
     }
