@@ -49,21 +49,20 @@ public class SortingAlgorithms implements ISortingAlgorithms {
         return arr;
     }
 
+    
     @Override
     public int[] bubbleSort(int[] arr) {
-        boolean swapped;
-        do {
-            swapped = false;
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i] > arr[i + 1]) {
-                    int temp = arr[i];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1] = temp;
-                    swapped = true;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 1; j < arr.length - i; j++) {
+                if (arr[j - 1] > arr[j]) {
+                    int temp = arr[j - 1];
+                    arr[j - 1] = arr[j];
+                    arr[j] = temp;
                 }
             }
-        } while (swapped);
-//	System.out.println(Arrays.toString(arr));
+        }
+        System.out.println(Arrays.toString(arr));
         return arr;
     }
 

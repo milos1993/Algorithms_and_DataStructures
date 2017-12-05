@@ -28,7 +28,7 @@ public class SearchingListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Event has just happened");
+        System.out.println("SearchingListener event has just happened");
         int[] a = convertStringToArray(jTextA.getText().trim());
         int d = Integer.getInteger(jTextD.getText().trim());
         boolean r = new SearchingAlgorithms().LinearSearch(a, d);
@@ -38,7 +38,7 @@ public class SearchingListener implements ActionListener {
 
     private int[] convertStringToArray(String string) {
         String[] arrayStr = string.trim().replace(",", " ").split(" ");
-        int[] arrayInt = new int[5];
+        int[] arrayInt = new int[arrayStr.length];
 //        int[] arrayInt = new int[arrayStr.length];
         for (int i = 0; i < arrayInt.length; i++) {
             arrayInt[i] = Integer.valueOf(arrayStr[i].trim());

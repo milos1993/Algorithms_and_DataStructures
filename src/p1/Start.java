@@ -12,7 +12,6 @@ package p1;
  */
 public class Start {
  public static void main(String[] args) {
-        FAlgAndSort faads = new FAlgAndSort();
-        faads.setVisible(true);
+         new FAlgAndSort().setVisible(true);
     }
 }

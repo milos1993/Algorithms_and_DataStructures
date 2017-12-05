@@ -42,6 +42,7 @@ public class FAlgAndSort extends javax.swing.JFrame {
         jLabelD = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabelA.setText("Unesite elemente niza ");
 

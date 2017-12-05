@@ -6,7 +6,10 @@
 package starter_class;
 
 import implementation_algorithms.SearchingAlgorithms;
-
+import implementation_algorithms.SortingAlgorithms;
+import inf_algorithms.ISearchingAlgorithms;
+import inf_algorithms.ISortingAlgorithms;
+import java.util.Arrays;
 
 /**
  *
@@ -14,22 +17,17 @@ import implementation_algorithms.SearchingAlgorithms;
  */
 public class Start {
 
-     
-
-  
-
     public static void main(String[] args) {
-        int[] array = new int[]{1,3,5,4,2,6};
-//        SortingAlgorithms obj1 = new SortingAlgorithms();
+        int[] array = {1, 3, 6, 5, 4, 2, 2, 6};
+        ISortingAlgorithms obj1 = new SortingAlgorithms();
 //        obj1.selectionSort(array);
-        
-            
-        SearchingAlgorithms obj2 = new SearchingAlgorithms();
-        System.out.println(obj2.LinearSearch(array, 12)) ;
-//        SortArrowIconselectionSort(array);
-//        selectionSort(new int[]{1,1,1,1,1,1});
 
+        ISearchingAlgorithms obj2 = new SearchingAlgorithms();
+//        System.out.println(obj2.LinearSearch(array, 12));
+//        SortArrowIconselectionSort(array);
+//        selectionSort(new int[]{1, 1, 1, 1, 1, 1});
 //        minValue(array);
 //        averageValue(array);
+        obj1.bubbleSort(array);
     }
 }
