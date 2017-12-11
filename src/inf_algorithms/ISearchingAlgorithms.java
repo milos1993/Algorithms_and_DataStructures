@@ -10,7 +10,7 @@ package inf_algorithms;
  * @author acer e1
  */
 public interface ISearchingAlgorithms {
-    
+    /***/
     boolean linearSearch(int[] arr, int num);
 
     /**
