@@ -17,7 +17,7 @@ public interface ISearchingAlgorithms {
      *Binary search, recusive algo for searching wanted number, represents better version than algo for linear search.
      * 
      *
-     * intput parametars :
+     * 
      * @param v   number that you are looking for, 
      * @param arr given array, 
      * @param l   index of most left num in array  #0
