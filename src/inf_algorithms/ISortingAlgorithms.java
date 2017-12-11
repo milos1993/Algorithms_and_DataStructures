@@ -12,5 +12,5 @@ package  inf_algorithms;
 public interface ISortingAlgorithms {
     int[] selectionSort(int[] arr);
     int[] bubbleSort(int[] arr);
-    int[] megeSort(int[]arr);
+    int[] mergeSort(int[]arr);
 }
