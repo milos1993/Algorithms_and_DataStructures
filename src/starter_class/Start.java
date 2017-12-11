@@ -10,6 +10,7 @@ import implementation_algorithms.SortingAlgorithms;
 import inf_algorithms.ISearchingAlgorithms;
 import inf_algorithms.ISortingAlgorithms;
 import java.util.Arrays;
+import static implementation_algorithms.SortingAlgorithms.mergeSortt;
 
 /**
  *
@@ -30,6 +31,8 @@ public class Start {
 //        minValue(array);
 //        averageValue(array);
 //        obj1.bubbleSort(array);
-        System.out.println(obj2.binarySearch(8, array1, 0, array1.length-1));
+//        System.out.println(obj2.binarySearch(8, array1, 0, array1.length-1));
+        obj1.mergeSort(array);
+        
     }
 }

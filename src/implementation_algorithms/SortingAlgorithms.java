@@ -66,75 +66,251 @@ public class SortingAlgorithms implements ISortingAlgorithms {
         return arr;
     }
 
-    
-    public int[] mergeSortt(int[] lst) {
-    int n = lst.length; 
-    int[] left;
-    int[] right;
-    
-    // create space for left and right subarrays
-    if (n % 2 == 0) {
-        left = new int[n/2];
-        right = new int[n/2];
-    } 
-    else {
-        left = new int[n/2];
-        right = new int[n/2+1];
-    }
-    
-    // fill up left and right subarrays
-    for (int i = 0; i < n; i++) {
-        if (i < n/2) {
-            left[i] = lst[i];
-        }
-        else {
-            right[i-n/2] = lst[i];
-        }
-    }
-    
-    // recursively split and merge
-    left = mergeSort(left);
-    right = mergeSort(right);
-    
-    // merge
-    return merge(left, right);
-}
-// the function for merging two sorted arrays
-static int[] merge(int[] left, int[] right) {
-    // create space for the merged array
-    int[] result = new int[left.length+right.length];
-    
-    // running indices
-    int i = 0;
-    int j = 0;
-    int index = 0;
-    
-    // add until one subarray is deplete
-    while (i < left.length && j < right.length) {
-        if (left[i] < right[j]) {
-            result[index++] = left[i++];
+  
+//    @Override
+//    public int[] mergeSort(int[] arr) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+  // Merges two subarrays of arr[].
+    // First subarray is arr[l..m]
+    // Second subarray is arr[m+1..r]
+    void mergeSort(int arr[], int l, int m, int r)
+    {
+        // Find sizes of two subarrays to be merged
+        int n1 = m - l + 1;
+        int n2 = r - m;
+ 
+        /* Create temp arrays */
+        int L[] = new int [n1];
+        int R[] = new int [n2];
+ 
+        /*Copy data to temp arrays*/
+        for (int i=0; i<n1; ++i)
+            L[i] = arr[l + i];
+        for (int j=0; j<n2; ++j)
+            R[j] = arr[m + 1+ j];
+ 
+ 
+        /* Merge the temp arrays */
+ 
+        // Initial indexes of first and second subarrays
+        int i = 0, j = 0;
+ 
+        // Initial index of merged subarry array
+        int k = l;
+        while (i < n1 && j < n2)
         {
-        else {
-            result[index++] = right[j++];
+            if (L[i] <= R[j])
+            {
+                arr[k] = L[i];
+                i++;
+            }
+            else
+            {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+ 
+        /* Copy remaining elements of L[] if any */
+        while (i < n1)
+        {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+ 
+        /* Copy remaining elements of R[] if any */
+        while (j < n2)
+        {
+            arr[k] = R[j];
+            j++;
+            k++;
         }
     }
-    
-    // add every leftover elelment from the subarray 
-    while (i < left.length) {
-        result[index++] = left[i++];
+ 
+    // Main function that sorts arr[l..r] using
+    // mergeSort()
+    void sort(int arr[], int l, int r)
+    {
+        if (l < r)
+        {
+            // Find the middle point
+            int m = (l+r)/2;
+ 
+            // Sort first and second halves
+            sort(arr, l, m);
+            sort(arr , m+1, r);
+ 
+            // Merge the sorted halves
+            mergeSort(arr, l, m, r);
+        }
     }
-    
-    // only one of these two while loops will be executed
-    while (j < right.length) {
-        result[index++] = right[j++];
-    }
-    
-    return result;
-}
-    @Override
-    public int[] mergeSort(int[] arr) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+ 
+    /* A utility function to print array of size n */
+   	// Merges two subarrays of arr[].
+	// First subarray is arr[l..m]
+	// Second subarray is arr[m+1..r]
+	void mergeSort(int arr[], int l, int m, int r)
+	{
+		// Find sizes of two subarrays to be merged
+		int n1 = m - l + 1;
+		int n2 = r - m;
 
+		/* Create temp arrays */
+		int L[] = new int [n1];
+		int R[] = new int [n2];
+
+		/*Copy data to temp arrays*/
+		for (int i=0; i<n1; ++i)
+			L[i] = arr[l + i];
+		for (int j=0; j<n2; ++j)
+			R[j] = arr[m + 1+ j];
+
+
+		/* Merge the temp arrays */
+
+		// Initial indexes of first and second subarrays
+		int i = 0, j = 0;
+
+		// Initial index of merged subarry array
+		int k = l;
+		while (i < n1 && j < n2)
+		{
+			if (L[i] <= R[j])
+			{
+				arr[k] = L[i];
+				i++;
+			}
+			else
+			{
+				arr[k] = R[j];
+				j++;
+			}
+			k++;
+		}
+
+		/* Copy remaining elements of L[] if any */
+		while (i < n1)
+		{
+			arr[k] = L[i];
+			i++;
+			k++;
+		}
+
+		/* Copy remaining elements of R[] if any */
+		while (j < n2)
+		{
+			arr[k] = R[j];
+			j++;
+			k++;
+		}
+	}
+
+	// Main function that sorts arr[l..r] using
+	// mergeSort()
+	void sort(int arr[], int l, int r)
+	{
+		if (l < r)
+		{
+			// Find the middle point
+			int m = (l+r)/2;
+
+			// Sort first and second halves
+			sort(arr, l, m);
+			sort(arr , m+1, r);
+
+			// Merge the sorted halves
+			mergeSort(arr, l, m, r);
+		}
+	}
+
+	/* A utility function to print array of size n */
+	// Merges two subarrays of arr[].
+	// First subarray is arr[l..m]
+	// Second subarray is arr[m+1..r]
+	void mergeSort(int arr[], int l, int m, int r)
+	{
+		// Find sizes of two subarrays to be merged
+		int n1 = m - l + 1;
+		int n2 = r - m;
+
+		/* Create temp arrays */
+		int L[] = new int [n1];
+		int R[] = new int [n2];
+
+		/*Copy data to temp arrays*/
+		for (int i=0; i<n1; ++i)
+			L[i] = arr[l + i];
+		for (int j=0; j<n2; ++j)
+			R[j] = arr[m + 1+ j];
+
+
+		/* Merge the temp arrays */
+
+		// Initial indexes of first and second subarrays
+		int i = 0, j = 0;
+
+		// Initial index of merged subarry array
+		int k = l;
+		while (i < n1 && j < n2)
+		{
+			if (L[i] <= R[j])
+			{
+				arr[k] = L[i];
+				i++;
+			}
+			else
+			{
+				arr[k] = R[j];
+				j++;
+			}
+			k++;
+		}
+
+		/* Copy remaining elements of L[] if any */
+		while (i < n1)
+		{
+			arr[k] = L[i];
+			i++;
+			k++;
+		}
+
+		/* Copy remaining elements of R[] if any */
+		while (j < n2)
+		{
+			arr[k] = R[j];
+			j++;
+			k++;
+		}
+	}
+
+	// Main function that sorts arr[l..r] using
+	// mergeSort()
+	void sort(int arr[], int l, int r)
+	{
+		if (l < r)
+		{
+			// Find the middle point
+			int m = (l+r)/2;
+
+			// Sort first and second halves
+			sort(arr, l, m);
+			sort(arr , m+1, r);
+
+			// Merge the sorted halves
+			mergeSort(arr, l, m, r);
+		}
+	}
+
+	/* A utility function to print array of size n */
+	static void printArray(int arr[])
+	{
+		int n = arr.length;
+		for (int i=0; i<n; ++i)
+			System.out.print(arr[i] + " ");
+		System.out.println();
+	}
    
         }
