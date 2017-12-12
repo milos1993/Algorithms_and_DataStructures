@@ -14,15 +14,7 @@ import inf_algorithms.ISortingAlgorithms;
  */
 public class SortingAlgorithms implements ISortingAlgorithms {
 
-    /**
-     * In this method we have ilustration of how selection sort algorithms
-     * actually works, input parametar is simple array of integer @param arr and
-     * return value is itselg but previously sorted
-     *
-     * @param arr
-     * @return int[]
-     *
-     */
+
     @Override
     public int[] selectionSort(int[] arr) {
 
@@ -119,14 +111,14 @@ public class SortingAlgorithms implements ISortingAlgorithms {
 
     // Main function that sorts arr[l..r] using
     // merge()
-    public void sort(int arr[], int l, int r) {
+    public void mergeSort(int arr[], int l, int r) {
         if (l < r) {
             // Find the middle point
             int m = (l + r) / 2;
 
             // Sort first and second halves
-            sort(arr, l, m);
-            sort(arr, m + 1, r);
+            mergeSort(arr, l, m);
+            mergeSort(arr, m + 1, r);
 
             // Merge the sorted halves
             merge(arr, l, m, r);

@@ -10,6 +10,15 @@ package  inf_algorithms;
  * @author acer e1
  */
 public interface ISortingAlgorithms {
+     /**
+     * In this method we have ilustration of how selection sort algorithms
+     * actually works, input parametar is simple array of integer @param arr and
+     * return value is itselg but previously sorted
+     *
+     * @param arr
+     * @return int[]
+     *
+     */
     int[] selectionSort(int[] arr);
     int[] bubbleSort(int[] arr);
 

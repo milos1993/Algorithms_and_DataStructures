@@ -31,7 +31,7 @@ public class Start {
 //        averageValue(array);
 //        obj1.bubbleSort(array);
 //        System.out.println(obj2.binarySearch(8, array1, 0, array1.length-1));
-        obj1.sort(array, 0, array.length-1);
+        obj1.mergeSort(array, 0, array.length-1);
         obj1.printArray(array);
     }
 }
