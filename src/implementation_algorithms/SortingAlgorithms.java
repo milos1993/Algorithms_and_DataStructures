@@ -14,7 +14,6 @@ import inf_algorithms.ISortingAlgorithms;
  */
 public class SortingAlgorithms implements ISortingAlgorithms {
 
-
     @Override
     public int[] selectionSort(int[] arr) {
 

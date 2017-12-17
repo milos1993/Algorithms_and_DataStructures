@@ -10,19 +10,23 @@ package inf_algorithms;
  * @author acer e1
  */
 public interface ISearchingAlgorithms {
-    /***/
+
+    /**
+     * 
+     */
     boolean linearSearch(int[] arr, int num);
 
     /**
-     *Binary search, recusive algo for searching wanted number, represents better version than algo for linear search.
-     * 
+     * Binary search, recusive algo for searching wanted number, represents
+     * better version than algo for linear search.
      *
-     * 
-     * @param v   number that you are looking for, 
-     * @param arr given array, 
-     * @param l   index of most left num in array  #0
-     * @param r   index of most right num in array #(array.length-1)
+     *
+     *
+     * @param v number that you are looking for,
+     * @param arr given array,
+     * @param l index of most left num in array #0
+     * @param r index of most right num in array #(array.length-1)
      * @return
      */
-    boolean binarySearch(int v, int[]arr, int l, int r);
+    boolean binarySearch(int v, int[] arr, int l, int r);
 }

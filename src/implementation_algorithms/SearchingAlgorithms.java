@@ -44,23 +44,21 @@ public class SearchingAlgorithms implements ISearchingAlgorithms {
         System.out.println("Number you are looking for, didnt find in given array");
         return false;
     }
-    
+
     @Override
     public boolean binarySearch(int v, int[] arr, int l, int r) {
         if (l > r) {
-        System.out.println("not found");
-        return false;
-    }    
-    int middle = (l+r)/2;
-    if (v == arr[middle]) {
-        System.out.println("found! It is at " + middle);
-        return true;
-    }
-    else if (v > arr[middle]) {
-        return binarySearch(v, arr, middle+1, r);
-    }
-    else {
-        return binarySearch(v, arr, l, middle-1);
-    }
+            System.out.println("not found");
+            return false;
+        }
+        int middle = (l + r) / 2;
+        if (v == arr[middle]) {
+            System.out.println("found! It is at " + middle);
+            return true;
+        } else if (v > arr[middle]) {
+            return binarySearch(v, arr, middle + 1, r);
+        } else {
+            return binarySearch(v, arr, l, middle - 1);
+        }
     }
 }

@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package  inf_algorithms;
+package inf_algorithms;
 
 /**
  *
  * @author acer e1
  */
 public interface ISortingAlgorithms {
-     /**
+
+    /**
      * In this method we have ilustration of how selection sort algorithms
      * actually works, input parametar is simple array of integer @param arr and
      * return value is itselg but previously sorted
@@ -20,6 +21,7 @@ public interface ISortingAlgorithms {
      *
      */
     int[] selectionSort(int[] arr);
+
     int[] bubbleSort(int[] arr);
 
     /**
